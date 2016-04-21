@@ -4,24 +4,20 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+   Button b ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        b = (Button)findViewById(R.id.button);
+       b.setOnClickListener(this);
         Log.d("Vivz","Oncreate Activity");
     }
 
-     public void doSomething(View v)
-     {
-
-         if(v.getId()==R.id.button)
-         Log.d("Button cLick", " First  button clicked");
-        else if(v.getId()==R.id.button2)
-             Log.d("Button is ok"," second button is clicked");
-     }
 
     @Override
     protected void onResume() {
@@ -57,5 +53,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         Log.d("Vivz", "OnDestroyActivity");
+    }
+
+    @Override
+    public void onClick(View v) {
+        Log.d("Here i am","My Button");
     }
 }
