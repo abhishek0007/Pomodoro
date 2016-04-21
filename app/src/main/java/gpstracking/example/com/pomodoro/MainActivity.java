@@ -1,9 +1,8 @@
 package gpstracking.example.com.pomodoro;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
@@ -12,39 +11,51 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    }
-    public void button1(View view)
-    {
-        Intent browserIntent =  new Intent(Intent.ACTION_VIEW, Uri.parse("http://currentaffairs.gktoday.in/current-affairs/chhattisgarh\n" +
-                "\n" +
-                "fb"));
-        startActivity(browserIntent);
+        Log.d("Vivz","Oncreate Activity");
     }
 
-    public void button2(View view)
-    {
-        Intent browserIntent =  new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/cggyanstrita/"));
-        startActivity(browserIntent);
-    }
-    public void button3(View view)
-    {
-        Intent browserIntent =  new Intent(Intent.ACTION_VIEW, Uri.parse(
-                "http://www.allexamgurublog.com/2015/03/chhattisgarh-objective-gk-questions-and.html"));
-        startActivity(browserIntent);
-    }
-    public void button4(View view)
-    {
-        Intent browserIntent =  new Intent(Intent.ACTION_VIEW, Uri.parse(
-                "http://www.cggkquiz.in/p/blog-page.html"));
-        startActivity(browserIntent);
+     public void doSomething(View v)
+     {
+
+         if(v.getId()==R.id.button)
+         Log.d("Button cLick", " First  button clicked");
+        else if(v.getId()==R.id.button2)
+             Log.d("Button is ok"," second button is clicked");
+     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d("Vivz","OnResumeActivity");
     }
 
-    public void button5(View view)
-    {
-        Intent browserIntent =  new Intent(Intent.ACTION_VIEW, Uri.parse(
-                "http://www.mahanadiacademy.com/OldPaper"));
-        startActivity(browserIntent);
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d("Vivz", "OnStartActivity");
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d("Vivz", "OnPauseActivity");
+    }
 
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d("Vivz", "OnStopActivity");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d("Vivz", "OnRestartActivity");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d("Vivz", "OnDestroyActivity");
+    }
 }
