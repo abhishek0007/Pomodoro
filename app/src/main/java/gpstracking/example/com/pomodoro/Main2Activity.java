@@ -3,8 +3,11 @@ package gpstracking.example.com.pomodoro;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+
+import java.io.File;
 
 public class Main2Activity extends AppCompatActivity {
 
@@ -40,6 +43,18 @@ public class Main2Activity extends AppCompatActivity {
                 i.putExtra(i.EXTRA_STREAM, img);
                 cho = i.createChooser(i,"Launch map");
                 startActivity(cho);
+
+            }
+        else if(v.getId()==R.id.button5)
+            {
+             File picture =    Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
+                String[] listOfPicture = picture.list();
+                for(String pictu:listOfPicture)
+                {
+                        L.S(this,pictu);
+                }
+
+
 
             }
     }
