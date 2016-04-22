@@ -16,6 +16,6 @@ public class L {
     public static  void S(Context c,String msg )
     {
 
-        Toast.makeText(c, msg, Toast.LENGTH_LONG).show();
+        Toast.makeText(c, msg, Toast.LENGTH_SHORT).show();
     }
 }

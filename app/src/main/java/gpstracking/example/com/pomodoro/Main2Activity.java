@@ -16,7 +16,12 @@ public class Main2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
     }
+    public void NextActivity(View v)
+    {
+        Intent i = new Intent(this,Main22Activity.class);
+        startActivity(i);
 
+    }
     public  void process(View v)
     {
         Intent i = null,cho=null;
@@ -46,12 +51,12 @@ public class Main2Activity extends AppCompatActivity {
 
             }
         else if(v.getId()==R.id.button5)
-            {
+                {
              File picture =    Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
                 String[] listOfPicture = picture.list();
                 for(String pictu:listOfPicture)
                 {
-                        L.S(this,pictu);
+                    L.S(this,pictu);
                 }
 
 
