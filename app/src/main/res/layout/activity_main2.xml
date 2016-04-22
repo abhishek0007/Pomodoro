@@ -7,25 +7,16 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="gpstracking.example.com.pomodoro.MainActivity">
+    tools:context="gpstracking.example.com.pomodoro.Main2Activity">
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/HW"
-        android:textSize="23dp" />
-
-    <Button
-        android:id="@+id/button"
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignTop="@+id/textView"
-        android:layout_marginTop="40dp"
-        android:onClick="gotoNexr"
-        android:text="New Button" />
-
-
+        android:layout_alignParentTop="true"
+        android:fontFamily="23"
+        android:text="Second Activity"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 </RelativeLayout>
